@@ -16,9 +16,9 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/user/Library/Application Support/reclaim/logs/nudge.log</string>
+    <string>/Users/thisone/Library/Application Support/reclaim/logs/nudge.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/user/Library/Application Support/reclaim/logs/nudge.err</string>
+    <string>/Users/thisone/Library/Application Support/reclaim/logs/nudge.err</string>
 </dict>
 </plist>
