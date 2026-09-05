@@ -4,7 +4,7 @@ import subprocess
 import time
 
 
-def kill_nudge(interval=0.6):
+def kill_nudge(interval=0.2):
     try:
         while True:
             try:
