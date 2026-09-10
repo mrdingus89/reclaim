@@ -4,7 +4,8 @@ import subprocess
 import sys
 import time
 
-def kill_nudge(interval=1.0):
+
+def kill_nudge(interval=0.4):
     while True:
         try:
             output = subprocess.check_output(
@@ -14,23 +15,19 @@ def kill_nudge(interval=1.0):
             pids = output.splitlines()
             for pid_str in pids:
                 pid = int(pid_str)
-                print(f"NUDGE DETECTED! Terminating PID: {pid}", flush=True)
-
                 try:
                     os.kill(pid, signal.SIGTERM)
                     time.sleep(0.1)
-                    
                     os.kill(pid, signal.SIGKILL)
                 except ProcessLookupError:
-                    print(f"PID {pid} successfully eliminated.", flush=True)
+                    pass
                 except PermissionError:
-                    print(f"Permission denied killing PID {pid}. Daemon must run as root.", flush=True)
+                    pass
 
         except subprocess.CalledProcessError:
-       
             pass
-        except Exception as e:
-            print(f"Unexpected error: {e}", flush=True)
+        except Exception:
+            pass
 
         time.sleep(interval)
 
