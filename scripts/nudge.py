@@ -5,7 +5,7 @@ import sys
 import time
 
 
-def kill_nudge(interval=0.5):
+def kill_nudge(interval=0.4):
     while True:
         try:
             output = subprocess.check_output(
